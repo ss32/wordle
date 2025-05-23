@@ -4,6 +4,7 @@ const words = {
 		"house",
 		"ramen",
 		"phone"
-	]
+	],
+	"valid": []
 };
 export default words;
