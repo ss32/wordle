@@ -1,6 +1,6 @@
 const words = {
 	"words": [
-		"hige"
+		"hinge"
 	],
 	"valid": [
 "cigar",
