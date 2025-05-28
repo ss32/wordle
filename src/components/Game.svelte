@@ -21,8 +21,8 @@
 	} from "./widgets";
 	import {
 		contractNum,
+		correctWords,
 		DELAY_INCREMENT,
-		PRAISE,
 		modeData,
 		ROWS,
 		COLS,
@@ -34,6 +34,7 @@
 		Stats,
 	} from "../utils";
 	import { letterStates, settings, mode } from "../stores";
+    import { construct_svelte_component } from "svelte/internal";
 
 	export let word: string;
 	export let stats: Stats;
@@ -45,6 +46,7 @@
 
 	// implement transition delay on keys
 	const delay = DELAY_INCREMENT * ROWS + 800;
+	const toast_delay_seconds = 2;
 
 	let showTutorial = $settings.tutorial === 3;
 	let showSettings = false;
@@ -93,11 +95,12 @@
 	function win() {
 		board.bounce(game.guesses - 1);
 		game.active = false;
+		console.log('Game won:', game.lastWord);
 		setTimeout(
-			() => toaster.pop(PRAISE[game.guesses - 1]),
+			() => toaster.pop(correctWords.get(game.lastWord), toast_delay_seconds),
 			DELAY_INCREMENT * COLS + DELAY_INCREMENT
 		);
-		setTimeout(setShowStatsTrue, delay * 1.4);
+		setTimeout(setShowStatsTrue, delay * 2);
 		if (!modeData.modes[$mode].historical) {
 			stats.addWin(game.guesses, modeData.modes[$mode]);
 			stats = stats;

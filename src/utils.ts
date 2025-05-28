@@ -1,10 +1,9 @@
 import seedRandom from "seedrandom";
-import { GameMode, ms } from "./enums";
+import { GameMode, ms} from "./enums";
 import wordList from "./words_5";
 
 export const ROWS = 6;
 export const COLS = 5;
-
 export const words = {
 	...wordList,
 	contains: (word: string) => {
@@ -212,13 +211,20 @@ export function seededRandomInt(min: number, max: number, seed: number) {
 export const DELAY_INCREMENT = 200;
 
 export const PRAISE = [
-	"Genius",
-	"Magnificent",
-	"Impressive",
-	"Splendid",
-	"Great",
-	"Phew",
+	"First guess? Hmmm good job, I guess",
+	"I dk feels suspicious, two guesses.",
+	"Well done, probably better than average!",
+	"Average!",
+	"That was close 😰",
+	"Did you crash this wedding?"
 ];
+
+export const correctWords = new Map<string, string>();
+correctWords.set("hinge", "hinge answer");
+correctWords.set("ramen", "ramen answer");
+correctWords.set("truck", "truck answer");
+correctWords.set("pizza", "pizza answer");
+
 
 abstract class Storable {
 	toString() { return JSON.stringify(this); }

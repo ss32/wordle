@@ -15,7 +15,7 @@
 	import { Toaster } from "./components/widgets";
 	import { setContext } from "svelte";
 
-	document.title = "Wordle+ | An infinite word guessing game";
+	document.title = "Wedding Wordle | A themed word game for our wedding! 🤓";
 </script>
 
 <script lang="ts">

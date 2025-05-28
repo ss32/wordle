@@ -11,3 +11,4 @@ export const enum ms {
 	HOUR = 1000 * 60 * 60,
 	DAY = 1000 * 60 * 60 * 24,
 };
+

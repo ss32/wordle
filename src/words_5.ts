@@ -1,9 +1,12 @@
 const words = {
 	"words": [
-		"hinge"
+		"hinge",
+		"ramen",
+		"truck",
+		"pizza",
 	],
 	"valid": [
-"cigar",
+		"cigar",
 		"rebut",
 		"sissy",
 		"humph",
